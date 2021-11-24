@@ -3,7 +3,7 @@
 ## 📌 구현할 기능 목록
 
 ### Application
-- [ ] 임의의 수 3자리를 만든다. `createRandomBalls()`
+- [ ] 컴퓨터의 임의의 수 3자리를 설정한다.
 - [ ] 입력한 값과 임의의 수와 비교한다. `compareBalls()`
 - [ ] 입력한 값과 임의의 수의 힌트를 받는다. `getHint()`
   - 입력한 값이 3자리 수 안에 있고 위치가 같다면 strike `isStrike()`
