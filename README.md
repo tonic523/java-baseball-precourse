@@ -29,9 +29,9 @@
   - [ ] 2개의 Balls를 비교해 BALL, STRIKE, NOTHING의 개수를 반환
 
 - [ ] View
-  - [ ] 입력 UI
+  - [x] 입력 UI
   - [ ] 힌트 UI
-  - [ ] 종료 UI
+  - [x] 종료 UI
 
 ---
 
