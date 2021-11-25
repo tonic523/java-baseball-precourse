@@ -27,11 +27,11 @@
   - [x] Ball이 담길 때 Ball의 숫자가 중복값이 있는지 확인
   - [x] Ball이 들어왔을 때 위치와 숫자로 STRIKE, BALL, NOTHING인지 알려준다.
 
-- [ ] Hint
-  - [ ] 2개의 Balls를 비교해 BALL, STRIKE, NOTHING의 개수를 저장
-  - [ ] BALL의 개수 반환
-  - [ ] STRIKE의 개수 반환
-  - [ ] NOTHING의 개수 반환
+- [x] Hint
+  - [x] 2개의 Balls를 비교해 BALL, STRIKE, NOTHING의 개수를 저장
+  - [x] BALL의 개수 반환
+  - [x] STRIKE의 개수 반환
+  - [x] NOTHING의 개수 반환
 
 - [ ] View
   - [x] 입력 UI
