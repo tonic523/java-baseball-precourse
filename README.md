@@ -21,9 +21,9 @@
   - [x] 숫자, 위치 값을 반환한다.
   - [x] 생성될 때 숫자가 1 ~9인지 검사
 
-- [ ] Balls
-  - [ ] List로 Ball을 가진다.
-  - [ ] Ball의 값 중 중복값이 있는지 검사
+- [x] Balls
+  - [x] List로 Ball을 가진다.
+  - [x] Ball의 값 중 중복값이 있는지 검사
 
 - [ ] Hint
   - [ ] 2개의 Balls를 비교해 BALL, STRIKE, NOTHING의 개수를 반환
