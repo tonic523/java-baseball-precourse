@@ -33,9 +33,9 @@
   - [x] STRIKE의 개수 반환
   - [x] NOTHING의 개수 반환
 
-- [ ] View
+- [x] View
   - [x] 입력 UI
-  - [ ] 힌트 UI
+  - [x] 힌트 UI
   - [x] 종료 UI
 
 ---

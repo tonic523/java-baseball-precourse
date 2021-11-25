@@ -6,7 +6,16 @@ public class View {
     }
 
     public static void hintUI(Hint hint) {
-
+        int strike = hint.strike();
+        int ball = hint.ball();
+        String result = "";
+        if (ball != 0) {
+            result += ball + "볼 ";
+        }
+        if (strike != 0) {
+            result += strike + "스트라이크";
+        }
+        System.out.println(result);
     }
 
     public static void endUI() {
