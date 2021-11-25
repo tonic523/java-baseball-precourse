@@ -28,8 +28,10 @@
   - [x] Ball이 들어왔을 때 위치와 숫자로 STRIKE, BALL, NOTHING인지 알려준다.
 
 - [ ] Hint
-  - [ ] ball 2개의 값을 비교
   - [ ] 2개의 Balls를 비교해 BALL, STRIKE, NOTHING의 개수를 저장
+  - [ ] BALL의 개수 반환
+  - [ ] STRIKE의 개수 반환
+  - [ ] NOTHING의 개수 반환
 
 - [ ] View
   - [x] 입력 UI
