@@ -24,4 +24,14 @@ public class Balls {
             throw new IllegalArgumentException();
         }
     }
+
+    public BallStatus getBallStatus(Ball ball, int position) {
+        if (balls.contains(ball) && balls.get(position).equals(ball)) {
+            return BallStatus.STRIKE;
+        }
+        if (balls.contains(ball)) {
+            return BallStatus.BALL;
+        }
+        return BallStatus.NOTHING;
+    }
 }

@@ -1,2 +1,5 @@
-package baseball;public class HintTest {
+package baseball;
+
+public class HintTest {
+
 }

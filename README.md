@@ -25,7 +25,7 @@
 - [x] Balls
   - [x] List로 Ball을 가진다.
   - [x] Ball이 담길 때 Ball의 숫자가 중복값이 있는지 확인
-  - [ ] Ball이 들어왔을 때 위치와 숫자로 STRIKE, BALL, NOTHING인지 알려준다.
+  - [x] Ball이 들어왔을 때 위치와 숫자로 STRIKE, BALL, NOTHING인지 알려준다.
 
 - [ ] Hint
   - [ ] ball 2개의 값을 비교
