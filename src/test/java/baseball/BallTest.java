@@ -9,15 +9,14 @@ public class BallTest {
 
     @Test
     void validateNumber() {
-        assertThatThrownBy(() -> new Ball(0, 1))
+        assertThatThrownBy(() -> new Ball(0))
             .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void ballGetter() {
-        Ball ball = new Ball(1, 1);
+        Ball ball = new Ball(1);
         assertThat(ball.getNumber()).isEqualTo(1);
-        assertThat(ball.getPosition()).isEqualTo(1);
     }
 
 }

@@ -10,17 +10,17 @@ public class BallsTest {
     @Test
     void addBall() {
         Balls balls = new Balls(3);
-        balls.add(new Ball(1, 0));
-        balls.add(new Ball(2, 1));
-        balls.add(new Ball(3, 2));
+        balls.add(new Ball(1));
+        balls.add(new Ball(2));
+        balls.add(new Ball(3));
         assertThat(balls.getBalls().size()).isEqualTo(3);
     }
 
     @Test
     void validateDuplication() {
         Balls balls = new Balls(3);
-        balls.add(new Ball(1, 0));
-        assertThatThrownBy(() -> balls.validateDuplication(new Ball(1, 1)))
+        balls.add(new Ball(1));
+        assertThatThrownBy(() -> balls.validateDuplication(new Ball(1)))
             .isInstanceOf(IllegalArgumentException.class);
     }
 }

@@ -2,14 +2,13 @@ package baseball;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Balls {
 
     private List<Ball> balls;
 
     public Balls(int size) {
-        balls = new ArrayList<Ball>(3);
+        balls = new ArrayList<Ball>(size);
     }
 
     public List<Ball> getBalls() {
@@ -17,7 +16,7 @@ public class Balls {
     }
 
     public void add(Ball ball) {
-        balls.add(ball.getPosition(), ball);
+        balls.add(ball);
     }
 
     public void validateDuplication(Ball ball) throws IllegalArgumentException {
