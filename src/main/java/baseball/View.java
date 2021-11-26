@@ -8,7 +8,12 @@ public class View {
     public static void hintUI(Hint hint) {
         int strike = hint.strike();
         int ball = hint.ball();
+        int nothing = hint.nothing();
         String result = "";
+        if (nothing == 3) {
+            System.out.println("낫싱");
+            return;
+        }
         if (ball != 0) {
             result += ball + "볼 ";
         }
