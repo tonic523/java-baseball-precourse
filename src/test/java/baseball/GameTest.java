@@ -30,4 +30,21 @@ public class GameTest {
         }
     }
 
+    @DisplayName("숫자인지 검사")
+    @Nested
+    class ValidateisNumber {
+        @DisplayName("성공")
+        @Test
+        void success() {
+            Game.validateIsNumber("123");
+        }
+
+        @DisplayName("실패")
+        @Test
+        void fail() {
+            assertThatThrownBy(() -> Game.validateIsNumber("a23"))
+                .isInstanceOf(IllegalArgumentException.class);
+        }
+    }
+
 }
