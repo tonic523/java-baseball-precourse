@@ -1,8 +1,29 @@
 package baseball;
 
+import static baseball.Ball.MAX_VALUE;
+import static baseball.Ball.MIN_VALUE;
+
+import camp.nextstep.edu.missionutils.Randoms;
+import java.util.LinkedHashSet;
+import java.util.List;
+
 public class Game {
 
     private boolean play = true;
+    private List<Ball> computer;
+    private final int BALL_SIZE = 3;
+
+    public Game() {
+        computer = setComputer();
+    }
+
+    public List<Ball> setComputer() {
+        LinkedHashSet<Ball> computer = new LinkedHashSet<>();
+        while (computer.size() < BALL_SIZE) {
+            computer.add(new Ball(Randoms.pickNumberInRange(MIN_VALUE, MAX_VALUE)));
+        }
+        return (List<Ball>) computer;
+    }
 
     public static void validateSize(String input) throws IllegalArgumentException {
         if (input.length() != 3) {
