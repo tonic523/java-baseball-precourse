@@ -1,5 +1,6 @@
 package baseball;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.assertj.core.api.Assertions;
@@ -29,6 +30,28 @@ public class BallTest {
             assertThatThrownBy(() -> new Ball(c))
                 .isInstanceOf(IllegalArgumentException.class);
         }
+    }
+
+    @DisplayName("비교")
+    @Nested
+    class Equals {
+
+        @DisplayName("성공")
+        @Test
+        void success() {
+            Ball ball1 = new Ball(1);
+            Ball ball2 = new Ball(1);
+            assertThat(ball1.equals(ball2)).isTrue();
+        }
+
+        @DisplayName("실패")
+        @Test
+        void fail() {
+            Ball ball1 = new Ball(1);
+            Ball ball2 = new Ball(2);
+            assertThat(ball1.equals(ball2)).isFalse();
+        }
+
     }
 
 
