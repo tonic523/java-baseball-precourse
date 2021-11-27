@@ -1,7 +1,5 @@
 package baseball;
 
-import javax.swing.Icon;
-
 public class View {
     public static void inputUI() {
         System.out.print("숫자를 입력해주세요 : ");
