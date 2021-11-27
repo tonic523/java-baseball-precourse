@@ -1,5 +1,6 @@
 package baseball;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -47,4 +48,23 @@ public class GameTest {
         }
     }
 
+    @DisplayName("게임 진행")
+    @Nested
+    class Play {
+        @DisplayName("게임 종료")
+        @Test
+        void end() {
+            Game game = new Game();
+            game.setPlay(2);
+            assertThat(game.isPlay()).isFalse();
+        }
+
+        @DisplayName("게임 진행")
+        @Test
+        void isPlay() {
+            Game game = new Game();
+            game.setPlay(1);
+            assertThat(game.isPlay()).isTrue();
+        }
+    }
 }
