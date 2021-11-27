@@ -20,13 +20,13 @@ public class Ball {
     }
 
     private void validate_number(int number) throws IllegalArgumentException {
-        if (number < 1 || number > 9) {
+        if (number < MIN_VALUE || number > MAX_VALUE) {
             throw new IllegalArgumentException();
         }
     }
 
     private void validate_char(char c) throws IllegalArgumentException {
-        if (c < '1' || c > '9') {
+        if (c < MIN_VALUE + '0' || c > MAX_VALUE + '0') {
             throw new IllegalArgumentException();
         }
     }

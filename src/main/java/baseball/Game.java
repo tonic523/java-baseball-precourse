@@ -11,6 +11,8 @@ import java.util.List;
 
 public class Game {
 
+    private final String END = "2";
+
     private boolean play = true;
     private List<Ball> computer;
     private Hint hint;
@@ -56,7 +58,7 @@ public class Game {
     }
 
     public boolean isThreeStrike() {
-        return hint.strike() == 3;
+        return hint.strike() == BALL_SIZE;
     }
 
     public List<Ball> getComputer() {
@@ -84,7 +86,7 @@ public class Game {
     public void setPlay() {
         initHint();
         View.correctUI();
-        if (Console.readLine().equals("2")) {
+        if (Console.readLine().equals(END)) {
             play = false;
             return;
         }
