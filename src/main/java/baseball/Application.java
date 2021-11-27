@@ -22,17 +22,24 @@ public class Application {
         //TODO: 숫자 야구 게임 구현
         init();
         while (START) {
+            // 사용자 입력
             inputUI();
             String input = Console.readLine();
             validate(input);
+            // 힌트 출력
             Hint hint = compare(input);
             View.hintUI(hint);
-            if (!(isCorrect(hint.strike()))) {
-                continue;
-            }
-            View.correctUI();
-            choicePlay(Console.readLine());
+            // 힌트에 따라 프로그램 실행
+            isCorrect(hint);
         }
+    }
+
+    private static void isCorrect(Hint hint) {
+        if (hint.strike() != 3) {
+            return;
+        }
+        View.correctUI();
+        choicePlay(Console.readLine());
     }
 
     private static void init() {
@@ -62,13 +69,6 @@ public class Application {
         List<Ball> user = setBallList(input);
         hint.setHint(user);
         return hint;
-    }
-
-    public static boolean isCorrect(int strike) {
-        if (strike == BALL_SIZE) {
-            return true;
-        }
-        return false;
     }
 
     public static void choicePlay(String input) {
