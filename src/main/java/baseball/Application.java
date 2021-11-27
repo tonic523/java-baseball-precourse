@@ -36,6 +36,7 @@ public class Application {
     }
 
     private static void init() {
+        START = true;
         computer = setRandomBallList();
     }
 
