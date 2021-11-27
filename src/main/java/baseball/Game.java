@@ -3,6 +3,7 @@ package baseball;
 import static baseball.Ball.MAX_VALUE;
 import static baseball.Ball.MIN_VALUE;
 
+import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -12,18 +13,28 @@ public class Game {
 
     private boolean play = true;
     private List<Ball> computer;
+    private Hint hint;
     private final int BALL_SIZE = 3;
 
     public Game() {
+        init();
+    }
+
+    private void init() {
         computer = setRandomBallList();
+        initHint();
+    }
+
+    public void initHint() {
+        hint = new Hint(computer);
     }
 
     public List<Ball> setRandomBallList() {
-        LinkedHashSet<Ball> computer = new LinkedHashSet<>();
-        while (computer.size() < BALL_SIZE) {
-            computer.add(new Ball(Randoms.pickNumberInRange(MIN_VALUE, MAX_VALUE)));
+        LinkedHashSet<Ball> balls = new LinkedHashSet<>();
+        while (balls.size() < BALL_SIZE) {
+            balls.add(new Ball(Randoms.pickNumberInRange(MIN_VALUE, MAX_VALUE)));
         }
-        return new ArrayList<>(computer);
+        return new ArrayList<>(balls);
     }
 
     public List<Ball> setBallList(String input) throws IllegalArgumentException {
@@ -33,8 +44,23 @@ public class Game {
         for (int i = 0; i < input.length(); i++) {
             balls.add(new Ball(input.charAt(i)));
         }
+
         validateSize(balls.size());
         return new ArrayList<>(balls);
+    }
+
+    public void setHint(String input) throws IllegalArgumentException {
+        List<Ball> user = setBallList(input);
+        hint.setHint(user);
+        View.hintUI(hint);
+    }
+
+    public boolean isThreeStrike() {
+        return hint.strike() == 3;
+    }
+
+    public List<Ball> getComputer() {
+        return computer;
     }
 
     public static void validateSize(int size) throws IllegalArgumentException {
@@ -55,10 +81,14 @@ public class Game {
         }
     }
 
-    public void setPlay(int number) {
-        if (number == 2) {
+    public void setPlay() {
+        initHint();
+        View.correctUI();
+        if (Console.readLine().equals("2")) {
             play = false;
+            return;
         }
+        init();
     }
 
     public boolean isPlay() {

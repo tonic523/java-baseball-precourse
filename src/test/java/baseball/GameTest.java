@@ -69,7 +69,7 @@ public class GameTest {
         @Test
         void end() {
             Game game = new Game();
-            game.setPlay(2);
+            game.setPlay();
             assertThat(game.isPlay()).isFalse();
         }
 
@@ -77,7 +77,7 @@ public class GameTest {
         @Test
         void isPlay() {
             Game game = new Game();
-            game.setPlay(1);
+            game.setPlay();
             assertThat(game.isPlay()).isTrue();
         }
     }
