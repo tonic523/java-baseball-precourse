@@ -26,10 +26,11 @@
   - [x] 수의 유효성 검사 (1~9인지)
   - [x] 공끼리 비교할 수 있는 equals 오버라이딩
 - [ ] Balls
-  - [ ] Ball 객체를 저장하는 리스트
-  - [ ] 리스트에 Ball을 추가
+  - [x] Ball 객체를 저장하는 리스트
+  - [x] 리스트에 Ball을 추가
   - [ ] 리스트에 Ball 리스트를 할당
-  - [ ] Ball 리스트에 중복된 값이 있는지 검사
+  - [x] Ball 리스트에 중복된 값이 있는지 검사
+  - [ ] Ball 리스트 반환
 - [ ] Hint
   - [ ] Map - key: BallStatus , value: 개수 (BallStatus : STRIKE, BALL, NOTHING)
   - [ ] 기준이 되는 Balls 객체를 가진다.
