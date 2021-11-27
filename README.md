@@ -29,6 +29,7 @@
   - [ ] Map - key: BallStatus , value: 개수 (BallStatus : STRIKE, BALL, NOTHING)
   - [ ] 기준이 되는 Balls 객체를 가진다.
   - [ ] Balls가 입력되면 기준이 되는 Balls와 비교해 Map에 힌트 저장
+  - [x] Ball이 들어오면 해당 Ball이 기준이 되는 Balls와 비교하여 타입 반환
 - [ ] View
   - [ ] 입력 UI
   - [ ] 힌트 UI
