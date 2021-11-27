@@ -4,6 +4,7 @@ import static baseball.Ball.MAX_VALUE;
 import static baseball.Ball.MIN_VALUE;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -14,19 +15,30 @@ public class Game {
     private final int BALL_SIZE = 3;
 
     public Game() {
-        computer = setComputer();
+        computer = setRandomBallList();
     }
 
-    public List<Ball> setComputer() {
+    public List<Ball> setRandomBallList() {
         LinkedHashSet<Ball> computer = new LinkedHashSet<>();
         while (computer.size() < BALL_SIZE) {
             computer.add(new Ball(Randoms.pickNumberInRange(MIN_VALUE, MAX_VALUE)));
         }
-        return (List<Ball>) computer;
+        return new ArrayList<>(computer);
     }
 
-    public static void validateSize(String input) throws IllegalArgumentException {
-        if (input.length() != 3) {
+    public List<Ball> setBallList(String input) throws IllegalArgumentException {
+        validateSize(input.length());
+        validateIsNumber(input);
+        LinkedHashSet<Ball> balls = new LinkedHashSet<>();
+        for (int i = 0; i < input.length(); i++) {
+            balls.add(new Ball(input.charAt(i)));
+        }
+        validateSize(balls.size());
+        return new ArrayList<>(balls);
+    }
+
+    public static void validateSize(int size) throws IllegalArgumentException {
+        if (size != 3) {
             throw new IllegalArgumentException();
         }
     }
