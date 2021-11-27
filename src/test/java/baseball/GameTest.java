@@ -69,16 +69,16 @@ public class GameTest {
         @Test
         void end() {
             Game game = new Game();
-            game.setPlay();
-            assertThat(game.isPlay()).isFalse();
+            game.choicePlay("2");
+            assertThat(game.start()).isFalse();
         }
 
         @DisplayName("게임 진행")
         @Test
         void isPlay() {
             Game game = new Game();
-            game.setPlay();
-            assertThat(game.isPlay()).isTrue();
+            game.choicePlay("1");
+            assertThat(game.start()).isTrue();
         }
     }
 }

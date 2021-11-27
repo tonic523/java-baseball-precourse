@@ -3,7 +3,6 @@ package baseball;
 import static baseball.Ball.MAX_VALUE;
 import static baseball.Ball.MIN_VALUE;
 
-import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -15,8 +14,7 @@ public class Game {
 
     private boolean play = true;
     private List<Ball> computer;
-    private Hint hint;
-    private final int BALL_SIZE = 3;
+    public final int BALL_SIZE = 3;
 
     public Game() {
         init();
@@ -24,11 +22,6 @@ public class Game {
 
     private void init() {
         computer = setRandomBallList();
-        initHint();
-    }
-
-    public void initHint() {
-        hint = new Hint(computer);
     }
 
     public List<Ball> setRandomBallList() {
@@ -46,25 +39,37 @@ public class Game {
         for (int i = 0; i < input.length(); i++) {
             balls.add(new Ball(input.charAt(i)));
         }
-
         validateSize(balls.size());
         return new ArrayList<>(balls);
     }
 
-    public void setHint(String input) throws IllegalArgumentException {
+    public Hint compare(String input) {
+        Hint hint = new Hint(computer);
         List<Ball> user = setBallList(input);
         hint.setHint(user);
-        View.hintUI(hint);
+        return hint;
     }
 
-    public boolean isThreeStrike() {
-        return hint.strike() == BALL_SIZE;
+    public boolean isCorrect(int strike) {
+        if (strike == BALL_SIZE) {
+            return true;
+        }
+        return false;
     }
 
-    public List<Ball> getComputer() {
-        return computer;
+    public void choicePlay(String input) {
+        if (input.equals(END)) {
+            play = false;
+            return;
+        }
+        init();
     }
 
+    public boolean start() {
+        return play;
+    }
+
+    // 유효성 검사
     public static void validateSize(int size) throws IllegalArgumentException {
         if (size != 3) {
             throw new IllegalArgumentException();
@@ -81,19 +86,5 @@ public class Game {
         if (!(Character.isDigit(c))) {
             throw new IllegalArgumentException();
         }
-    }
-
-    public void setPlay() {
-        initHint();
-        View.correctUI();
-        if (Console.readLine().equals(END)) {
-            play = false;
-            return;
-        }
-        init();
-    }
-
-    public boolean isPlay() {
-        return play;
     }
 }

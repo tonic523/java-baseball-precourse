@@ -9,14 +9,15 @@ public class Application {
     public static void main(String[] args) {
         //TODO: 숫자 야구 게임 구현
         Game game = new Game();
-        while (game.isPlay()) {
+        while (game.start()) {
             inputUI();
-            game.setHint(Console.readLine());
-            if (!(game.isThreeStrike())) {
-                game.initHint();
+            Hint hint = game.compare(Console.readLine());
+            View.hintUI(hint);
+            if (!(game.isCorrect(hint.strike()))) {
                 continue;
             }
-            game.setPlay();
+            View.correctUI();
+            game.choicePlay(Console.readLine());
         }
     }
 }
