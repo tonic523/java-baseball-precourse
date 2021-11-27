@@ -25,10 +25,10 @@
   - [x] 공의 수 저장 (문자를 넣을 때, 수를 넣을 때)
   - [x] 수의 유효성 검사 (1~9인지)
   - [x] 공끼리 비교할 수 있는 equals 오버라이딩
-- [ ] Hint
-  - [ ] Map - key: BallStatus , value: 개수 (BallStatus : STRIKE, BALL, NOTHING)
-  - [ ] 기준이 되는 Balls 객체를 가진다.
-  - [ ] Balls가 입력되면 기준이 되는 Balls와 비교해 Map에 힌트 저장
+- [x] Hint
+  - [x] Map - key: BallStatus , value: 개수 (BallStatus : STRIKE, BALL, NOTHING)
+  - [x] 기준이 되는 Balls 객체를 가진다.
+  - [x] Balls가 입력되면 기준이 되는 Balls와 비교해 Map에 힌트 저장
   - [x] Ball이 들어오면 해당 Ball이 기준이 되는 Balls와 비교하여 타입 반환
 - [ ] View
   - [ ] 입력 UI
